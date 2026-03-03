@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <app-header (menuClick)="openDrawer()"></app-header>
+<app-sidebar [visible]="visible" (close)="closeDrawer()"></app-sidebar>
+<p-confirmDialog></p-confirmDialog>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+</div>

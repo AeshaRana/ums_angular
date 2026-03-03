@@ -1,0 +1,101 @@
+/* Industrial dark theme for top header bar */
+
+:host ::ng-deep .p-menubar {
+  background: #020617; /* near-black charcoal */
+  border: none;
+  border-radius: 0;
+  color: #e5e7eb; /* gray-200 */
+  padding-inline: 1.5rem;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.9);
+}
+
+:host ::ng-deep .p-menubar-root-list > .p-menuitem > .p-menuitem-content {
+  border-radius: 999px;
+  padding-inline: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+:host ::ng-deep .p-menubar-root-list > .p-menuitem > .p-menuitem-content:hover {
+  background: #1f2937; /* gray-800 */
+}
+
+:host ::ng-deep .p-menuitem-link,
+:host ::ng-deep .p-menuitem-link .p-menuitem-text,
+:host ::ng-deep .p-menuitem-link .p-menuitem-icon {
+  color: #e5e7eb;
+}
+
+:host ::ng-deep .p-menuitem-link:hover,
+:host ::ng-deep .p-menuitem-link:hover .p-menuitem-text,
+:host ::ng-deep .p-menuitem-link:hover .p-menuitem-icon {
+  color: #f9fafb;
+}
+
+/* Active / selected menu state (e.g. routerLinkActive) */
+:host ::ng-deep .p-menuitem.active > .p-menuitem-content {
+  background: #f97316; /* industrial orange */
+}
+
+:host ::ng-deep .p-menuitem.active .p-menuitem-link,
+:host ::ng-deep .p-menuitem.active .p-menuitem-link .p-menuitem-text,
+:host ::ng-deep .p-menuitem.active .p-menuitem-link .p-menuitem-icon {
+  color: #f9fafb;
+}
+
+/* Brand area (icon + title) */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-brand-icon {
+  font-size: 1.4rem;
+  color: #facc15; /* amber accent */
+}
+
+.header-brand-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #f9fafb;
+}
+
+/* Right side: avatar + logout */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+:host ::ng-deep .p-avatar {
+  box-shadow: 0 0 0 2px #020617;
+}
+
+/* Icon buttons (menu + logout) */
+:host ::ng-deep .p-button {
+  background: transparent;
+  border: none;
+  color: #d1d5db; /* gray-300 */
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+
+:host ::ng-deep .p-button:hover {
+  color: #f9fafb;
+  background-color: #1c1917; /* warm dark neutral */
+}
+
+:host ::ng-deep .p-button:active {
+  transform: scale(0.97);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  :host ::ng-deep .p-menubar {
+    padding-inline: 0.75rem;
+  }
+
+  .header-brand-title {
+    font-size: 1rem;
+  }
+}

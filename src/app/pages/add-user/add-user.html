@@ -1,0 +1,138 @@
+<div class="display-flex justify-content-center bg-light mt-3">
+  <div class="card shadow-lg p-5 rounded-4" style="width: 400px; margin: auto">
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+
+  <h3 class="text-center mb-4 text-success">Add-user Form</h3>
+
+  <!-- USERNAME -->
+  <div class="mb-3">
+    <label class="form-label fw-semibold">
+      Enter Your Username
+    </label>
+
+    <p-floatlabel variant="on">
+      <p-iconfield>
+
+        <input
+          pInputText
+          id="name"
+          fluid
+          formControlName="name"
+          [invalid]="
+            formData.get('name')?.invalid &&
+            (formData.get('name')?.touched )
+          "
+        />
+
+        @if (
+          formData.get('name')?.invalid &&
+          (formData.get('name')?.touched )
+        ) {
+          <div class="mb-3">
+            <p-message
+              severity="error"
+              size="small"
+              variant="simple">
+              Username is required.
+            </p-message>
+          </div>
+        }
+
+      </p-iconfield>
+
+      <label for="name">First Name</label>
+    </p-floatlabel>
+  </div>
+
+
+  <!-- EMAIL -->
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Enter Email</label>
+
+    <p-floatlabel variant="on">
+
+      <input
+        pInputText
+        type="email"
+        id="email"
+        formControlName="email"
+        fluid
+        [invalid]="
+          formData.get('email')?.invalid &&
+          (formData.get('email')?.touched )
+        "
+      />
+
+      @if (
+        formData.get('email')?.invalid &&
+        (formData.get('email')?.touched )
+      ) {
+        <div class="mb-3">
+          <p-message
+            severity="error"
+            size="small"
+            variant="simple">
+            Enter valid email.
+          </p-message>
+        </div>
+      }
+
+      <label for="email">Email</label>
+    </p-floatlabel>
+  </div>
+
+
+  <!-- PHONE -->
+  <div class="mb-3">
+    <label class="form-label fw-semibold">
+      Enter phone Number
+    </label>
+
+    <p-floatlabel variant="on">
+
+      <input
+        pInputText
+        type="text"
+        id="phone"
+        fluid
+        formControlName="phone"
+        [invalid]="
+          formData.get('phone')?.invalid &&
+          (formData.get('phone')?.touched )
+        "
+      />
+
+      @if (
+        formData.get('phone')?.invalid &&
+        (formData.get('phone')?.touched )
+      ) {
+        <div class="mb-3">
+          <p-message
+            severity="error"
+            size="small"
+            variant="simple">
+            Mobile number is required.
+          </p-message>
+        </div>
+      }
+
+      <label for="phone">Phone</label>
+    </p-floatlabel>
+  </div>
+
+
+  <!-- SUBMIT -->
+  <div class="d-grid mt-4">
+    <button
+      pButton
+      type="submit"
+      fluid
+      label="Add User"
+      icon="pi pi-user"
+      [disabled]="formData.invalid">
+    </button>
+  </div>
+
+</form>
+  </div>
+</div>

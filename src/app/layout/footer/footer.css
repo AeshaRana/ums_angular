@@ -1,0 +1,26 @@
+/* Industrial dark footer bar */
+
+:host ::ng-deep .p-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+footer {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: #020617; /* near-black charcoal */
+  color: #6b7280; /* gray-500 */
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  border-top: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-inline: 1rem;
+    font-size: 0.75rem;
+  }
+}

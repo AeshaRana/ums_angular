@@ -1,0 +1,106 @@
+/* Industrial dark theme for sidebar drawer */
+
+:host ::ng-deep .p-drawer {
+  background: #020617; /* near-black charcoal */
+  color: #e5e7eb;
+  border-right: 1px solid rgba(31, 41, 55, 0.9);
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.85);
+  margin:0;
+  padding: 0;
+}
+
+:host ::ng-deep .p-drawer-header {
+  background: #020617;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+:host ::ng-deep .p-drawer-content {
+  background: #020617;
+}
+
+/* Override light text utility classes inside this drawer to be dark-theme friendly */
+:host ::ng-deep .p-drawer .text-surface-700 {
+  color: #d1d5db; /* gray-300 */
+}
+
+:host ::ng-deep .p-drawer .dark\:text-surface-100 {
+  color: #f9fafb;
+}
+
+:host ::ng-deep .p-drawer .hover\:bg-surface-100:hover,
+:host ::ng-deep .p-drawer .dark\:hover\:bg-surface-700:hover {
+  background: #111827; /* slate-900 */
+}
+
+/* Navigation items */
+:host ::ng-deep .p-drawer a.p-ripple {
+  border-radius: 0.8rem;
+}
+
+:host ::ng-deep .p-drawer a.p-ripple.router-link-active,
+:host ::ng-deep .p-drawer a.p-ripple.router-link-active:hover {
+  background: #f97316; /* industrial orange */
+  color: #020617;
+}
+
+:host ::ng-deep .p-drawer a.p-ripple.router-link-active i {
+  color: #020617;
+}
+
+/* Section label text */
+:host ::ng-deep .p-drawer .text-surface-500 {
+  color: #9ca3af;
+}
+
+/* Divider and border accents */
+:host ::ng-deep .p-drawer hr.border-surface {
+  border-color: rgba(31, 41, 55, 0.9);
+}
+
+/* User block at the bottom */
+:host ::ng-deep .p-drawer .p-avatar {
+  box-shadow: 0 0 0 2px #020617;
+}
+
+:host ::ng-deep .sidebar-close.p-button {
+  width: 2rem !important;
+  height: 2rem;
+  padding: 0;
+  border-radius: 999px;
+  background: transparent;
+  border-color: rgba(55, 65, 81, 0.9);
+  color: #9ca3af;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.1s ease;
+}
+
+:host ::ng-deep .sidebar-close.p-button:hover {
+  background: #111827;
+  border-color: #f97316;
+  color: #f9fafb;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.5);
+  transform: translateY(-1px);
+}
+
+:host ::ng-deep .sidebar-close.p-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+:host ::ng-deep .sidebar-close.p-button:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+:host ::ng-deep ul li a{
+  text-decoration: none;
+}
+
+:host ::ng-deep .navigation-links
+{
+  /* text-align: center; */
+  justify-items: center;
+  margin-top: 2.5rem;
+}

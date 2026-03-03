@@ -1,0 +1,88 @@
+/* Industrial dark theme for user list table */
+
+.card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+:host ::ng-deep .p-table {
+  background: transparent;
+  color: #e5e7eb; /* gray-200 */
+}
+
+:host ::ng-deep .p-table-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #020617; /* near-black charcoal */
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
+}
+
+:host ::ng-deep .p-datatable-table {
+  background: transparent;
+}
+
+:host ::ng-deep .p-datatable-thead > tr > th {
+  background: #0b1120; /* slate-950 */
+  color: #9ca3af; /* gray-400 */
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+:host ::ng-deep .p-datatable-tbody > tr > td {
+  border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+  color: #e5e7eb;
+}
+
+:host ::ng-deep .p-datatable-tbody > tr:nth-child(even) {
+  background: #020617;
+}
+
+:host ::ng-deep .p-datatable-tbody > tr:nth-child(odd) {
+  background: #020617;
+}
+
+:host ::ng-deep .p-datatable-tbody > tr:hover {
+  background: #111827; /* slate-900 */
+}
+
+/* Loading state */
+:host ::ng-deep .p-datatable-loading-overlay {
+  background: rgba(2, 6, 23, 0.9);
+}
+
+/* Paginator */
+:host ::ng-deep .p-paginator {
+  background: #020617;
+  border-top: 1px solid rgba(31, 41, 55, 0.9);
+  color: #9ca3af;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-page,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-prev,
+:host ::ng-deep .p-paginator .p-paginator-first,
+:host ::ng-deep .p-paginator .p-paginator-last {
+  border-radius: 999px;
+  /* color: #e5e7eb; */
+}
+
+:host ::ng-deep .p-paginator .p-paginator-page.p-highlight {
+  background: #f97316; /* industrial orange */
+  border-color: #f97316;
+  color: #020617;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-page:not(.p-highlight):hover,
+:host ::ng-deep .p-paginator .p-paginator-next:hover,
+:host ::ng-deep .p-paginator .p-paginator-prev:hover,
+:host ::ng-deep .p-paginator .p-paginator-first:hover,
+:host ::ng-deep .p-paginator .p-paginator-last:hover {
+  background: #111827;
+  border-color: transparent;
+}

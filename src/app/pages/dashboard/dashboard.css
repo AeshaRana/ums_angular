@@ -1,0 +1,58 @@
+/* Industrial dark theme for dashboard view */
+
+:host {
+  display: block;
+  min-height: calc(100vh - 4rem);
+  padding: 1.5rem;
+  background: radial-gradient(circle at top left, #111827 0, #020617 45%, #020617 100%);
+  color: #e5e7eb; /* gray-200 */
+}
+
+/* PrimeFlex grid overrides for nicer spacing on dark background */
+.grid {
+  margin-inline: -0.75rem;
+  /* row-gap: 1.5rem; */
+  /* margin-top: 0.75rem; reduce space below header */
+}
+
+.col-12,
+.md\:col-6,
+.lg\:col-3 {
+  padding-inline: 0.75rem;
+}
+
+/* Area background behind cards */
+.dashboard-surface {
+  background: rgba(15, 23, 42, 0.85); /* slate overlay */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+/* If you wrap your grid in a .dashboard-surface div, this will apply.
+   The grid itself looks fine without it, so this rule is optional. */
+
+/* Subtle animation for app-card tiles */
+app-card {
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+app-card:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  :host {
+    padding: 1rem;
+  }
+
+  .grid {
+    row-gap: 1.25rem;
+  }
+}

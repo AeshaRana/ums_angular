@@ -1,0 +1,63 @@
+<div class="display-flex justify-content-center  bg-light mt-3">
+  <div class="card shadow-lg p-5 rounded-4 " style="width: 400px;margin: auto;">
+    <form  #loginForm>
+      <h3 class="text-center mb-4 text-success mt-4s">Login Form</h3>
+
+      <div class="mb-3">
+       <label for="password" class="form-label fw-semibold"> Enter Your Username</label>
+        <p-floatlabel variant="on">
+          <p-iconfield>
+            <input #fname="ngModel"
+              pInputText
+              id="username"
+              [(ngModel)]="username"
+              autocomplete="on"
+              name="username"
+              fluid
+              required="true"
+              [invalid]="fname.invalid && (fname.touched || loginForm['submitted'])"
+            />
+              @if(fname.invalid && (fname.touched || loginForm['submitted']))
+          {
+             <div class="mb-3">
+               <p-message severity="error" size="small" variant="simple">Username is required.</p-message>
+             </div>
+          }
+             <p-inputicon class="pi pi-user" />
+          </p-iconfield>
+          <label for="username">Username</label>
+        </p-floatlabel>
+        
+      </div>
+
+      <p-toast position="top-right"></p-toast>
+
+      <div class="mb-3">
+        <label for="password" class="form-label fw-semibold"> Enter password</label>
+
+        <p-floatlabel variant="on">
+          <p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false" fluid name="password" />
+          <label for="password">Password</label>
+        </p-floatlabel>
+      </div>
+
+      <div class="d-grid mt-4">
+        <p-button label="Login" fluid (onClick)="onLogin()" icon="pi pi-user"></p-button>
+
+
+      </div>
+
+      <div class="mb-3">
+         <p-divider layout="horizontal" class="!flex md:!hidden" align="center"><b>OR</b></p-divider>
+      </div>
+
+    </form>
+     <div class="mb-3">
+        <p>Are you new user?? <p-button label="Register"
+        icon="pi pi-user-plus"
+        (onClick)="redirectRegister()"></p-button></p> 
+
+        
+      </div>
+  </div>
+</div>
